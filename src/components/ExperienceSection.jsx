@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 export function ExpItem({ e }) {
   return (
     <article className="exp rv">
@@ -24,8 +22,8 @@ export function ExpItem({ e }) {
 }
 
 export function ExperienceSection({ items, visible }) {
-  const n = visible;
-  const hasMore = items.length > n;
+  const n = visible ?? items.length;
+  const shown = items.slice(0, n);
 
   return (
     <section id="work" className="sec" aria-labelledby="h-work">
@@ -33,17 +31,10 @@ export function ExperienceSection({ items, visible }) {
         Experience
       </h2>
       <div>
-        {items.slice(0, n).map((e) => (
-          <ExpItem key={e.company + e.period + e.role} e={e} />
+        {shown.map((e) => (
+          <ExpItem key={e.company + e.period} e={e} />
         ))}
       </div>
-      {hasMore && (
-        <div className="center">
-          <Link className="btn" to="/experience">
-            Show all work experiences
-          </Link>
-        </div>
-      )}
     </section>
   );
 }
