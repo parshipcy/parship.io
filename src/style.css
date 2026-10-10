@@ -54,11 +54,15 @@ html {
   scroll-padding-top: calc(var(--nav-h) + 12px);
   -webkit-text-size-adjust: 100%;
 }
+#root {
+  min-height: 100vh;
+}
 body {
   background: var(--bg);
   color: var(--text);
   font: 15px/1.6 var(--font);
   overflow-x: hidden;
+  min-height: 100vh;
   transition:
     background var(--slow) var(--ease),
     color var(--slow) var(--ease);
@@ -94,6 +98,14 @@ svg.icon-filled {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 6px;
+}
+.site-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.site-shell > main {
+  flex: 1 0 auto;
 }
 .site-bounds::before,
 .site-bounds::after,

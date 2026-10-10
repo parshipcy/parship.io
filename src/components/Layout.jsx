@@ -14,9 +14,11 @@ export function Layout({ children }) {
       <a className="skip" href="/">
         Skip to content
       </a>
-      <Nav onPaletteOpen={() => setPaletteOpen(true)} />
-      {children}
-      <Footer />
+      <div className="site-shell">
+        <Nav onPaletteOpen={() => setPaletteOpen(true)} />
+        {children}
+        <Footer />
+      </div>
       <CursorGhost />
       <CommandPalette
         open={paletteOpen}
