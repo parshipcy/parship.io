@@ -5,6 +5,7 @@ import {
   sectionIdFromLocation,
   sectionToLocation,
 } from '../utils/homeSectionNav';
+import { pinNavSection } from '../utils/navActive';
 import { scheduleScrollToSection } from '../utils/scroll';
 
 export function useScrollToFromLocation() {
@@ -17,6 +18,7 @@ export function useScrollToFromLocation() {
     const id = sectionIdFromLocation(location);
     if (!id) return;
 
+    pinNavSection(id);
     scheduleScrollToSection(id);
 
     if (location.hash) {

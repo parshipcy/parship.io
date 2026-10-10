@@ -1,3 +1,4 @@
+import { pinNavSection } from './navActive';
 import { scheduleScrollToSection } from './scroll';
 
 export const HOME_SECTION_IDS = new Set([
@@ -57,9 +58,11 @@ export function goToHomeSection(navigate, pathname, search, id) {
 
   if (same) {
     navigate(target, { ...options, replace: true });
+    pinNavSection(id);
     scheduleScrollToSection(id);
     return;
   }
 
+  pinNavSection(id);
   navigate(target, options);
 }

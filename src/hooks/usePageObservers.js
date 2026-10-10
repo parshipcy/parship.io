@@ -1,13 +1,5 @@
 import { useEffect } from 'react';
-
-const SECTION_NAV_MAP = {
-  home: 'home',
-  work: 'work',
-  opensource: 'opensource',
-  blog: 'blog',
-  mail: 'mail',
-  projects: 'projects',
-};
+import { syncActiveNavFromScroll } from '../utils/navActive';
 
 export function usePageObservers(mainRef) {
   useEffect(() => {
@@ -35,26 +27,24 @@ export function usePageObservers(mainRef) {
       rv.observe(el);
     });
 
-    const links = document.querySelectorAll('[data-nav]');
-    const act = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            const navKey = SECTION_NAV_MAP[e.target.id];
-            links.forEach((a) =>
-              a.classList.toggle('active', a.dataset.nav === navKey),
-            );
-          }
-        });
-      },
-      { rootMargin: '-45% 0px -50% 0px' },
-    );
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        syncActiveNavFromScroll(main);
+        ticking = false;
+      });
+    };
 
-    main.querySelectorAll('section').forEach((s) => act.observe(s));
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    syncActiveNavFromScroll(main);
 
     return () => {
       rv.disconnect();
-      act.disconnect();
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
     };
   }, [mainRef]);
 }
