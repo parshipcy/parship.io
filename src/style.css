@@ -272,21 +272,26 @@ svg.icon-filled {
   gap: 6px;
 }
 .kbd-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  height: 34px;
-  padding: 0 6px 0 12px;
-  border-radius: 999px;
+  padding: 5px 6px 5px 12px;
+  border-radius: 8px;
   background: var(--bg2);
   border: 1px solid var(--border);
   color: var(--muted);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.2;
   transition:
     border-color var(--fast),
+    background var(--fast),
     transform var(--fast);
 }
 .kbd-btn:hover {
   border-color: var(--muted);
+  background: var(--card);
+  color: var(--text);
 }
 .keys {
   display: flex;
@@ -300,22 +305,26 @@ kbd {
   border: 1px solid var(--border);
 }
 .icon-btn {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   display: grid;
   place-items: center;
-  border: 0;
-  background: none;
-  border-radius: 50%;
+  padding: 0;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  border-radius: 8px;
   color: var(--muted);
-  font-size: 17px;
+  font-size: 16px;
   transition:
     color var(--fast),
-    background var(--fast);
+    background var(--fast),
+    border-color var(--fast),
+    transform var(--fast);
 }
 .icon-btn:hover {
   color: var(--text);
-  background: var(--bg2);
+  background: var(--card);
+  border-color: var(--muted);
 }
 .icon-btn:active,
 .btn:active,
@@ -486,32 +495,8 @@ h1 {
   margin-top: 14px;
 }
 .resume-dl-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 7px 15px 7px 12px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--card) 92%, var(--accent) 8%),
-    var(--card)
-  );
-  color: var(--text);
-  box-shadow: 0 1px 0 color-mix(in srgb, var(--text) 6%, transparent);
-  transition:
-    border-color var(--fast),
-    background var(--fast),
-    transform 0.2s var(--ease),
-    box-shadow 0.2s var(--ease);
-}
-.resume-dl-btn:hover {
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 12%, transparent);
-}
-.resume-dl-btn:active {
-  transform: translateY(0);
+  gap: 7px;
+  padding-left: 10px;
 }
 .resume-dl-icon {
   flex: none;
@@ -523,10 +508,7 @@ h1 {
   color: var(--accent);
 }
 .resume-dl-label {
-  font-size: 14px;
-  font-weight: 600;
   letter-spacing: -0.01em;
-  line-height: 1;
 }
 .stg {
   opacity: 0;
@@ -573,23 +555,34 @@ h2 {
 }
 
 .btn {
-  padding: 7px 14px;
-  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--bg2);
-  font-weight: 600;
-  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.2;
   transition:
     border-color var(--fast),
     background var(--fast),
+    color var(--fast),
     transform var(--fast);
 }
 .btn:hover {
   border-color: var(--muted);
   background: var(--card);
 }
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
 .btn-link {
-  display: inline-block;
+  display: inline-flex;
 }
 
 /* experience */
@@ -1264,7 +1257,7 @@ figcaption {
     display: none;
   }
   .kbd-btn {
-    padding: 0 10px;
+    padding: 5px 10px;
   }
   .nav-links a {
     padding: 6px 8px;

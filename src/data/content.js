@@ -67,4 +67,4 @@ export const PROJECTS = [
 
 export { BLOGS } from './blogs';
 
-export const VISIBLE = { experience: 3, blog: 3 };
+export const VISIBLE = { experience: 3, blog: 2 };

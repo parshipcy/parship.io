@@ -23,7 +23,6 @@ export function BlogPostRow({ post }) {
 export function BlogSection({ items, visible }) {
   const n = visible ?? items.length;
   const shown = items.slice(0, n);
-  const hasMore = items.length > n;
 
   if (!items.length) {
     return (
@@ -46,13 +45,11 @@ export function BlogSection({ items, visible }) {
           <BlogPostRow key={post.slug} post={post} />
         ))}
       </div>
-      {hasMore && (
-        <div className="center">
-          <Link className="btn" to="/blog">
-            Show all blogs
-          </Link>
-        </div>
-      )}
+      <div className="center">
+        <Link className="btn rv" to="/blog">
+          Show all blogs
+        </Link>
+      </div>
     </section>
   );
 }

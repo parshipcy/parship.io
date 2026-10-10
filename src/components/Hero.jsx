@@ -51,7 +51,7 @@ export function Hero() {
       </div>
       <div className="resume-dl stg">
         <a
-          className="resume-dl-btn"
+          className="btn resume-dl-btn"
           href={CONFIG.resumePdf}
           download={CONFIG.resumeFileName}
         >
