@@ -23,7 +23,7 @@
   --content-max: 720px;
   --site-bounds-gutter: max(16px, 22.5vw);
   --hero-bg-gutter: max(20px, 23vw);
-  --dotted-dot: color-mix(in srgb, var(--muted) 55%, var(--border));
+  --dotted-dot: color-mix(in srgb, var(--muted) 42%, var(--text));
   --dotted-step: 9px;
   --contrib-0: #1a1a1a;
   --contrib-1: color-mix(in srgb, var(--ok) 28%, var(--bg2));
@@ -43,6 +43,7 @@
   --ok: #14803c;
   --okbg: #e2f5e9;
   --shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --dotted-dot: color-mix(in srgb, var(--muted) 50%, var(--text));
 }
 * {
   box-sizing: border-box;
@@ -104,8 +105,8 @@ svg.icon-filled {
   border: none;
   background-image: radial-gradient(
     circle at center,
-    var(--dotted-dot) 0.65px,
-    transparent 0.7px
+    var(--dotted-dot) 0.72px,
+    transparent 0.78px
   );
   background-size: 1px var(--dotted-step);
   background-repeat: repeat-y;
@@ -197,8 +198,8 @@ svg.icon-filled {
   height: 1px;
   background-image: radial-gradient(
     circle at center,
-    var(--dotted-dot) 0.65px,
-    transparent 0.7px
+    var(--dotted-dot) 0.72px,
+    transparent 0.78px
   );
   background-size: var(--dotted-step) 1px;
   background-repeat: repeat-x;
@@ -1092,8 +1093,8 @@ figcaption {
   z-index: 0;
   background-image: radial-gradient(
     circle at center,
-    var(--dotted-dot) 0.65px,
-    transparent 0.7px
+    var(--dotted-dot) 0.72px,
+    transparent 0.78px
   );
   background-size: var(--dotted-step) 1px;
   background-repeat: repeat-x;
