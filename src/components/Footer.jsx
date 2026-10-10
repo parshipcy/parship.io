@@ -1,5 +1,6 @@
 import { CONFIG } from '../data/content';
 import { useHomeSectionNav } from '../hooks/useHomeSectionNav';
+import { sectionHref } from '../utils/homeSectionNav';
 import { SocialLink } from './SocialLinks';
 
 const FOOT_SECTIONS = [
@@ -21,7 +22,7 @@ export function Footer() {
           <ul className="foot-links">
             {FOOT_SECTIONS.map(([t, id]) => (
               <li key={t}>
-                <a href={`/#${id}`} onClick={(e) => goSection(e, id)}>
+                <a href={sectionHref(id)} onClick={(e) => goSection(e, id)}>
                   {t}
                 </a>
               </li>

@@ -4,13 +4,13 @@ import { goToHomeSection } from '../utils/homeSectionNav';
 
 export function useHomeSectionNav() {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
 
   return useCallback(
     (e, id) => {
       e.preventDefault();
-      goToHomeSection(navigate, pathname, id);
+      goToHomeSection(navigate, pathname, search, id);
     },
-    [navigate, pathname],
+    [navigate, pathname, search],
   );
 }

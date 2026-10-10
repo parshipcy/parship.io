@@ -1,6 +1,7 @@
 import logoSrc from '../assets/Parship.png';
 import { Icon } from './Icon';
 import { useHomeSectionNav } from '../hooks/useHomeSectionNav';
+import { sectionHref } from '../utils/homeSectionNav';
 import { toggleTheme } from '../utils/themeTransition';
 
 const NAV_ITEMS = [
@@ -21,7 +22,7 @@ export function Nav({ onPaletteOpen }) {
           {NAV_ITEMS.map(({ id, label }) => (
             <a
               key={id}
-              href={`/#${id}`}
+              href={sectionHref(id)}
               data-nav={id}
               onClick={(e) => onNavClick(e, id)}
             >

@@ -5,8 +5,8 @@ import { Icon } from './Icon';
 import { reduced } from '../utils/motion';
 import { goToHomeSection } from '../utils/homeSectionNav';
 
-function buildCommands(navigate, pathname) {
-  const go = (id) => () => goToHomeSection(navigate, pathname, id);
+function buildCommands(navigate, pathname, search) {
+  const go = (id) => () => goToHomeSection(navigate, pathname, search, id);
   const social = (id) => {
     const s = CONFIG.socials.find((x) => x.id === id);
     return s
@@ -53,10 +53,10 @@ function buildCommands(navigate, pathname) {
 
 export function CommandPalette({ open, onOpen, onClose }) {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
   const CMDS = useMemo(
-    () => buildCommands(navigate, pathname),
-    [navigate, pathname],
+    () => buildCommands(navigate, pathname, search),
+    [navigate, pathname, search],
   );
   const inputRef = useRef(null);
   const lastFocusRef = useRef(null);

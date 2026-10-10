@@ -11,7 +11,7 @@ export function Layout({ children }) {
   return (
     <>
       <div className="site-bounds" aria-hidden="true" />
-      <a className="skip" href="/#home">
+      <a className="skip" href="/">
         Skip to content
       </a>
       <Nav onPaletteOpen={() => setPaletteOpen(true)} />
