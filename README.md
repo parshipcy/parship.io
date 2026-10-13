@@ -1,4 +1,4 @@
-Personal portfolio - work, open source, projects, writing, and a ghost that follows your cursor.
+Personal portfolio - work, open source, projects, blogs, and a ghost that follows your cursor.
 
 <p align="left">
   <img
@@ -8,7 +8,7 @@ Personal portfolio - work, open source, projects, writing, and a ghost that foll
   />
 </p>
 
-**Also:** React Router, Lanyard, FormSubmit, GitHub Contributions API
+**Also:** React Router, Lanyard, FormSubmit, GitHub Contributions API.
 
 ---
 
@@ -23,8 +23,4 @@ npm run dev
 npm run build   # output -> dist/
 ```
 
-No env vars required for the static site.
-
----
-
-Made with care by [Parship Chowdhury](https://github.com/parshipcy).
+No env vars required.
